@@ -1,0 +1,42 @@
+cabal-version:   3.0
+name:            power-series
+version:         0.1.0.0
+license:         BSD-3-Clause
+license-file:    LICENSE
+copyright:       2022 Bodigrim
+maintainer:      andrew.lelechenko@gmail.com
+author:          Bodigrim
+homepage:        https://github.com/Bodigrim/power-series#readme
+synopsis:        Power series
+category:        Math
+build-type:      Simple
+extra-doc-files: changelog.md
+
+library
+    exposed-modules:  Data.Series.Power
+    hs-source-dirs:   src
+    default-language: Haskell2010
+    ghc-options:      -Wall
+    build-depends:
+        base,
+        chimera >=0.4,
+        poly >=0.3.1,
+        vector,
+        semirings,
+        transformers
+
+test-suite power-series-test
+    type:             exitcode-stdio-1.0
+    main-is:          Main.hs
+    hs-source-dirs:   test
+    default-language: Haskell2010
+    ghc-options:      -Wall
+    build-depends:
+        base,
+        mod,
+        poly,
+        power-series,
+        semirings,
+        tasty,
+        tasty-quickcheck,
+        vector
